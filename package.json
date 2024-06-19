@@ -8,7 +8,7 @@
     "node": "18.x"
   },
   "scripts": {
-    "build": "npm install && npm install ejs",
+    "build": "npm install && npm install ejs && npm install pug",
     "start": "node index.js",
     "devStart": "nodemon index.js"
   },
