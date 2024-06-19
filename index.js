@@ -10,6 +10,7 @@ const session = require("express-session");
 const nodemailer = require("nodemailer");
 
 const app = express();
+var ejs = require('ejs');
 const port = 3000;
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
