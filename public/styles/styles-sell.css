@@ -1,0 +1,10 @@
+h2 {
+  font-size: 4rem;
+}
+
+@media (max-width: 768px) {
+  #form {
+    padding: 0 !important;
+    margin-top: 0 !important;
+  }
+}

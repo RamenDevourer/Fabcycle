@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="/styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="/styles/styles.css" rel="stylesheet" />
+    <link href="/styles/styles-contact-us.css" rel="stylesheet" />
+  </head>
+  <body>
+    <%- include('navbar.ejs') %>
+
+    <section id="hero" class="gradient-background mb-5">
+      <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img
+              src="./assets/images/hero.png"
+              class="d-block mx-lg-auto img-fluid contact-img"
+              alt="log sell"
+              loading="lazy"
+            />
+          </div>
+          <div class="col-lg-6">
+            <h1
+              class="display-6 fw-bold text-body-emphasis lh-1 mb-3 fab-title"
+            >
+              Register
+            </h1>
+            <p class="lead fab-para">
+              Register to make an account with us<br />Enjoy all benefits after getting registered
+            </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <a href="./buy.html"
+                ><button type="button" class="btn btn-dark btn-lg px-4 me-md-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-bag-heart"
+                    viewBox="0 1 17 15"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"
+                    />
+                  </svg>
+                  Buy
+                </button></a
+              >
+              <a href="./sell.html"
+                ><button
+                  type="button"
+                  class="btn btn-outline-secondary btn-lg px-4"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-bag-heart-fill"
+                    viewBox="0 1 17 15"
+                  >
+                    <path
+                      d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5ZM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1Zm0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"
+                    />
+                  </svg>
+                  Sell
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="form" class="my-5 py-5">
+      <div class="container">
+        <div class="row align-items-stretch no-gutters contact-wrap">
+          <div class="col-md-12">
+            <div class="form h-100">
+              <h2>Get Started</h2>
+              <hr class="hr mb-5" />
+              <section id="form" class="p-5 my-5">
+                <div class="container">
+                  <h2>Register</h2>
+                  <hr class="hr mb-5 mt-3" />
+                  <div id='storemapper' style='width:80%;'>
+                    <p>Store Locator is loading from <a href='https://www.storemapper.co'>Storemapper</a>...</p>
+                  </div>
+                  
+                  <script data-storemapper-start='2023,10,26'
+                          data-storemapper-id='22815-b7rTPNLUdyQ7pIDS'>
+                          window.onload = function() {var script = document.createElement('script');
+                            script.type  = 'text/javascript';script.async = true;
+                            script.src = 'https://www.storemapper.co/js/widget-3.min.js';
+                            var entry = document.getElementsByTagName('script')[0];
+                            console.log(entry);
+                            entry.parentNode.insertBefore(script, entry);
+                            }
+                  </script>
+                  <form class="needs-validation" method="post" novalidate="">
+                    <div class="row g-3">
+                        <div class="col-12">
+                          <div class="col-12">
+                            
+
+                            <h4 class="mb-3">Address</h4><hr class="my-4" />
+                            <label for="address" class="form-label">Address</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="address"
+                              name="address"
+                              placeholder="1234 Main St"
+                              required=""
+                            />
+                            <div class="invalid-feedback">
+                              Please enter your shipping address.
+                            </div>
+                          </div>
+              
+                          <div class="col-12">
+                            <label for="address2" class="form-label"
+                              >Address 2
+                              <span class="text-body-secondary">(Optional)</span></label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="address2"
+                              name="address2"
+                              placeholder="Apartment or suite"
+                            />
+                          </div>
+              
+                          <div class="col-md-5">
+                            <label for="country" class="form-label">Country</label>
+                            <select name="country" class="form-select" id="country" required="">
+                              <option value="">Choose...</option>
+                              <option>India</option>
+                              <option class="disabled aria-disabled">Coming soon to more countries</option>
+                            </select>
+                            <div class="invalid-feedback">Please select a valid country.</div>
+                          </div>
+              
+                          <div class="col-md-4">
+                            <label for="state" class="form-label">State</label>
+                            <select name="state" class="form-select" id="state" required="">
+                              <option value="">Choose...</option>
+                              <option>Andhra Pradesh</option>
+                              <option>Arunachal Pradesh</option>
+                              <option>Assam</option>
+                              <option>Bihar</option>
+                              <option>Chhattisgarh</option>
+                              <option>Goa</option>
+                              <option>Gujarat</option>
+                              <option>Haryana</option>
+                              <option>Himachal Pradesh</option>
+                              <option>Jharkhand</option>
+                              <option>Karnataka</option>
+                              <option>Kerala</option>
+                              <option>Madhya Pradesh</option>
+                              <option>Maharashtra</option>
+                              <option>Manipur</option>
+                              <option>Meghalaya</option>
+                              <option>Mizoram</option>
+                              <option>Nagaland</option>
+                              <option>Odisha</option>
+                              <option>Punjab</option>
+                              <option>Rajasthan</option>
+                              <option>Sikkim</option>
+                              <option>Tamil Nadu</option>
+                              <option>Telangana</option>
+                              <option>Tripura</option>
+                              <option>Uttar Pradesh</option>
+                              <option>Uttarakhand</option>
+                              <option>West Bengal</option>
+                            </select>
+                            <div class="invalid-feedback">Please provide a valid state.</div>
+                          </div>
+              
+                          <div class="col-md-3 mb-4">
+                            <label for="pinCode" class="form-label">Pincode</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="pinCode"
+                              name="pinCode"
+                              placeholder=""
+                              required=""
+                            />
+                            <div class="invalid-feedback">Pin code required.</div>
+                          </div>
+                        </div>
+                        
+
+          <h4 class="my-3">User</h4><hr class="my-4" />
+                            <label for="username" class="form-label">Username</label>
+                            <div class="input-group has-validation">
+                              <span class="input-group-text">@</span>
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="username"
+                                name="username"
+                                placeholder="Username"
+                                required=""
+                              />
+                              <div class="invalid-feedback">Your username is required.</div>
+                            </div>
+
+                        </div>
+                        <div class="col-12">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group has-validation">
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="password"
+                                name="password"
+                                placeholder="password"
+                                required=""
+                              />
+                              <div class="invalid-feedback">Your password is required.</div>
+                            </div>
+                        </div>
+
+                      <div class="col-sm-6">
+                        <label for="firstName" class="form-label">First name</label>
+                        <input
+                          type="text"
+                          name="firstName"
+                          class="form-control"
+                          id="firstName"
+                          placeholder=""
+                          value=""
+                          required=""
+                        />
+                        <div class="invalid-feedback">Valid first name is required.</div>
+                      </div>
+          
+                      <div class="col-sm-6">
+                        <label for="lastName" class="form-label">Last name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="lastName"
+                          name="lastName"
+                          placeholder=""
+                          value=""
+                          required=""
+                        />
+                        <div class="invalid-feedback">Valid last name is required.</div>
+                      </div>
+          
+                      
+          
+                      <div class="col-12">
+                        <label for="email" class="form-label"
+                          >Email
+                          </label
+                        >
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="email"
+                          name="email"
+                          placeholder="you@example.com"
+                        />
+                        <div class="invalid-feedback">
+                          Please enter a valid email address for shipping updates.
+                        </div>
+                      </div>
+          
+                      
+          
+                    <hr class="my-4" />
+          
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">
+                      Continue
+                    </button>
+                  </form>
+
+              <div id="form-message-warning mt-4 mb-5"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="footer" class="gradient-background mt-5">
+      <div class="container">
+        <footer
+          class="d-flex flex-wrap justify-content-between align-items-center py-5 mt-4 border-top"
+        >
+          <div class="col-md-4 d-flex align-items-center">
+            <span class="mb-3 mb-md-0 text-body-secondary">©2023 Fabcycle</span>
+          </div>
+          <a
+            href="../index.html"
+            class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
+          >
+            <img
+              class="p-0 m-0"
+              src="../assets/images/logo.jpeg"
+              alt="logo"
+              width="70px"
+            />
+          </a>
+        </footer>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

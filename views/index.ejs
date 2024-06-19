@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fabcycle</title>
+    <link href="/styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="/styles/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <%- include('navbar.ejs') %>
+
+    <section id="hero" class="gradient-background mb-5">
+      <div class="container col-xxl-8 px-4 py-5 hero-img mobile-div">
+        <div
+          class="row flex-lg-row-reverse align-items-center g-5 py-5 hero-img mobile-div"
+        >
+          <div class="col-10 col-sm-8 col-lg-6 mobile-div">
+            <img
+              src="./assets/images/hero.png"
+              class="d-block mx-lg-auto img-fluid hero-img"
+              alt="logo1"
+              width="700"
+              height="500"
+              loading="lazy"
+            />
+          </div>
+          <div class="col-lg-6">
+            <% if (user) { %>
+            <h1>Welcome, <%= username %>!</h1>
+            <% } else {}%>
+            <h1
+              class="display-6 fw-bold text-body-emphasis lh-1 mb-3 fab-title"
+            >
+              Fabcycle
+            </h1>
+            <p class="lead fab-para">
+              Sell your old clothes and <br />Buy upcyled clothes
+            </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <a href="./buy.html"
+                ><button
+                  type="button"
+                  class="btn btn-dark btn-lg px-4 me-md-2 hero-button"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-bag-heart"
+                    viewBox="0 1 17 15"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"
+                    />
+                  </svg>
+                  Buy
+                </button></a
+              >
+              <a href="./sell.html"
+                ><button
+                  type="button"
+                  class="btn btn-outline-secondary btn-lg px-4 hero-button"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-bag-heart-fill"
+                    viewBox="0 1 17 15"
+                  >
+                    <path
+                      d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5ZM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1Zm0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"
+                    />
+                  </svg>
+                  Sell
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="prob-sol" class="my-5 py-5">
+      <div class="container">
+        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+          <div
+            class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden col-md-6 col-12 prob"
+          >
+            <div class="my-3 py-3 probb">
+              <h2 class="display-5">The Problem</h2>
+              <p class="lead">
+                "Fabrics Deserve a Second Act: Reduce, Reuse, Recycle!"
+              </p>
+            </div>
+            <div
+              class="bg-body-tertiary shadow-sm mx-auto"
+              style="width: 80%; height: 90%; border-radius: 21px 21px 0 0"
+            >
+              <p class="lead p-5 ans">
+                Fashion waste is a major environmental issue. The fashion
+                industry is responsible for a large fraction of global
+                greenhouse gas emissions, and textile waste is piling up in
+                landfills. Consumers often throw away clothing that is still in
+                good condition, contributing to the problem. While the
+                government and several fashion brands have put tangible efforts,
+                it doesn't seem to have solve the problem.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden col-md-6 col-12"
+          >
+            <div class="my-3 p-3 probb">
+              <h2 class="display-5">The Answer</h2>
+              <p class="lead">
+                "Reinvent, Revive, Upcycle: Because Old Can Be Bold!"
+              </p>
+            </div>
+            <div
+              class="shadow-sm mx-auto sol"
+              style="width: 80%; height: 90%; border-radius: 21px 21px 0 0"
+            >
+              <p class="lead p-5 ans">
+                Upcycling is the process of taking something old or unwanted and
+                transforming it into something new and useful. In the context of
+                fashion, upcycling typically involves taking old clothing items
+                and using them to create fresh garments. We at Fabcycle will aim
+                to reduce the amount of textile waste that accumulates in
+                landfills and minimizes energy-intensive processes associated
+                with creating new textiles by upcycling old clothing items.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="featurette" class="my-5">
+      <div class="container px-4 py-5" id="custom-cards">
+        <h2 class="pb-2 display-6">Featurette</h2>
+        <div
+          class="row row-cols-1 row-cols-lg-3 align-items-stretch justify-content-center g-4 py-5"
+        >
+          <button
+            type="button"
+            class="btn btn-lg modal-but"
+            data-bs-toggle="modal"
+            data-bs-target="#Modal1"
+          >
+            <div class="col modal-card">
+              <div
+                class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                style="background-image: url('./assets/images/modal1.png')"
+              >
+                <div
+                  class="d-flex flex-column p-5 pb-3 text-white text-shadow-1"
+                >
+                  <h3
+                    class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold modal-card d-flex justify-content-end align-items-center"
+                  >
+                    Fabric Management
+                  </h3>
+                  <h3 class="py-1 lh-1 fw-bold hidden-text">click to read</h3>
+                </div>
+              </div>
+            </div>
+          </button>
+          <div
+            class="modal fade"
+            id="Modal1"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-md modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Fabric Management
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <img
+                    class="d-flex justify-content-center align-items-center"
+                    src="./assets/images/modal1.png"
+                    width="100%"
+                  />
+                  <br />
+                  We will segregate the fabric on basis of textures and ﬁbres,
+                  for example- we will keep separate space and storage area for
+                  satin , cotton, silk, linen, etc. various fabrics. Also, we
+                  will manage them according to seasons so that they don’t get
+                  damaged. After that, we will use them according to the
+                  requirements of customers.
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn btn-lg modal-but"
+            data-bs-toggle="modal"
+            data-bs-target="#Modal2"
+          >
+            <div class="col modal-card">
+              <div
+                class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                style="background-image: url('./assets/images/modal2.png')"
+              >
+                <div
+                  class="d-flex flex-column p-5 pb-3 text-white text-shadow-1"
+                >
+                  <h3
+                    class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold modal-card d-flex justify-content-center align-items-center"
+                  >
+                    Upcycle
+                  </h3>
+                  <h3 class="py-1 lh-1 fw-bold hidden-text">click to read</h3>
+                </div>
+              </div>
+            </div>
+          </button>
+          <div
+            class="modal fade"
+            id="Modal2"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-md modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Upcycle
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <img
+                    class="d-flex justify-content-center align-items-center"
+                    src="./assets/images/modal2.png"
+                    width="100%"
+                  />
+                  <br />
+                  After our fabrics are sorted , we will upcycle the old clothes
+                  by making rugs, carpet, matts etc useful items. Fabric
+                  upcycling is a sustainable and creative practice that involves
+                  repurposing old or discarded textiles into new, valuable
+                  items. By breathing new life into fabric scraps or old
+                  clothing, upcycling reduces waste and lessens the
+                  environmental impact of fashion. It encourages resourcefulness
+                  and promotes unique, one-of-a-kind pieces. Upcycled fabric
+                  items can range from clothing and accessories to home decor,
+                  showcasing the versatility of this eco-friendly approach.
+                  Embracing fabric upcycling not only conserves resources but
+                  also encourages mindful consumer choices and fosters a sense
+                  of environmental responsibility. It's a small step with a big
+                  impact on reducing textile waste and promoting a more
+                  sustainable future.
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-lg modal-but"
+            data-bs-toggle="modal"
+            data-bs-target="#Modal3"
+          >
+            <div class="col modal-card">
+              <div
+                class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                style="background-image: url('./assets/images/modal3.png')"
+              >
+                <div
+                  class="d-flex flex-column p-5 pb-3 text-white text-shadow-1"
+                >
+                  <h3
+                    class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold modal-card d-flex justify-content-center align-items-center"
+                  >
+                    Credit
+                  </h3>
+                  <h3 class="py-1 lh-1 fw-bold hidden-text">click to read</h3>
+                </div>
+              </div>
+            </div>
+          </button>
+          <div
+            class="modal fade"
+            id="Modal3"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-md modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Credit System
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <img
+                    class="d-flex justify-content-center align-items-center"
+                    src="./assets/images/modal3.png"
+                    width="100%"
+                    height="450px"
+                  />
+                  <br />
+                  All the people who will be donating the clothes to us to
+                  recycle will be given special discount coupons so that they
+                  are motivated to give us more clothes for our usage. In this
+                  way, we will also run our business and sell the recycled
+                  fabrics at cheaper prices so that it is easily affordable to
+                  everyone. The clothes which will be sold will have a minimum
+                  credit of 5%. The valuable clothes or expensive fabrics will
+                  have a higher credit rate of 10-15%. By this way, we would
+                  sell our clothes in a fair way to the customers.
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="store" class="my-5 py-5">
+      <div class="container">
+        <h2 class="pb-5 display-6 mb-5">Store</h2>
+        <div class="row d-flex justify-content-center align-items-center p-0">
+          <div class="card col-md-4 col-12 me-md-5 mb-5" style="height: 650px">
+            <img
+              src="./assets/images/buy.png"
+              class="card-img-top pt-4"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Buy</h5>
+              <p class="card-text">
+                Purchase our highest quality upcycled fabrics. Its fashionable
+                and eco-friendly.
+              </p>
+              <a href="./buy.html" class="btn btn-primary">Buy</a>
+            </div>
+          </div>
+          <div class="card col-md-4 col-12 ms-md-5 mb-5" style="height: 650px">
+            <img
+              src="./assets/images/sell.png"
+              class="card-img-top sell-img pt-4"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Sell</h5>
+              <p class="card-text">
+                Sell your old fabrics to gain exciting rewards such as credits
+                and coupons.
+              </p>
+              <a href="./sell.html" class="btn btn-primary">Sell</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <%- include('footer.ejs') %>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

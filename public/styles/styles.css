@@ -1,0 +1,237 @@
+.gradient-background {
+  background: linear-gradient(300deg, #00bfff, #d5ffd0, #efed72);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+div {
+  font-size: 1.25rem;
+}
+
+.icon-square {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+}
+
+.nav-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.fab-title {
+  font-size: 4.5rem;
+}
+
+.fab-para {
+  font-size: 2rem;
+}
+
+.prob,
+.sol {
+  background-color: #ecee7a;
+  background-color: #dafbbd;
+}
+
+#featurette {
+  background-color: #d5ffd0;
+  background-color: #dafbbd;
+  padding-top: 3rem;
+  padding-bottom: 7rem;
+}
+
+.modal-card {
+  height: 300px;
+  filter: grayscale(0%);
+  transition: filter 0.3s ease-in-out;
+}
+
+.modal-card:hover {
+  filter: grayscale(50%);
+}
+
+.hidden-text {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+.modal-card:hover + .hidden-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.product-img {
+  filter: grayscale(0%);
+  transition: filter 0.3s ease-in-out;
+}
+
+.product-img:hover {
+  filter: grayscale(30%);
+}
+
+.product-img:hover + .hidden-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-but:hover {
+  transform: scale(1.075);
+}
+
+h3 {
+  text-shadow: 3px 3px black;
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .lead {
+    font-size: 1rem;
+  }
+  .card {
+    width: 80vw;
+  }
+  .nav-links {
+    visibility: hidden;
+    max-width: 0;
+  }
+  .navbar-toggler {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .navbar {
+    padding: 0;
+  }
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  body {
+    width: 100%;
+  }
+  #hero > div > div > div.col-10.col-sm-8.col-lg-6,
+  #hero > div > div,
+  #hero > div {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  #hero > div > div > div.col-10.col-sm-8.col-lg-6 > img,
+  #hero > div > div,
+  #hero > div {
+    width: 120vw;
+    max-height: 100vh;
+  }
+  #hero > div > div {
+    padding-bottom: 65px !important;
+  }
+  #hero > div > div > div:nth-child(2) > h1 {
+    font-size: 15vw;
+  }
+  #hero > div > div > div:nth-child(2) > p {
+    font-size: 7vw;
+  }
+  #prob-sol {
+    margin: 0;
+  }
+  .hero-button {
+    width: 40vw;
+  }
+  .ans {
+    padding: 25px !important;
+    font-size: 1.05rem;
+  }
+  .probb {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+  #prob-sol
+    > div
+    > div
+    > div.me-md-3.pt-3.px-3.pt-md-5.px-md-5.text-center.overflow-hidden.col-md-6.col-12.prob {
+    border-radius: 5%;
+    margin-bottom: 5px;
+  }
+  #prob-sol
+    > div
+    > div
+    > div.bg-body-tertiary.me-md-3.pt-3.px-3.pt-md-5.px-md-5.text-center.overflow-hidden.col-md-6.col-12 {
+    border-radius: 5%;
+  }
+  #hero {
+    margin-bottom: 0 !important;
+  }
+  #prob-sol,
+  #featurette,
+  #store {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  #custom-cards > div > button:nth-child(1) > div,
+  #custom-cards > div > button:nth-child(1),
+  #custom-cards > div > button:nth-child(3) > div,
+  #custom-cards > div > button:nth-child(3),
+  #custom-cards > div > button:nth-child(5) > div,
+  #custom-cards > div > button:nth-child(5) {
+    width: fit-content !important;
+  }
+  #custom-cards
+    > div
+    > button:nth-child(1)
+    > div
+    > div
+    > div
+    > h3.pt-5.mt-5.mb-4.display-6.lh-1.fw-bold.modal-card.d-flex.justify-content-end.align-items-center,
+  #custom-cards
+    > div
+    > button:nth-child(3)
+    > div
+    > div
+    > div
+    > h3.pt-5.mt-5.mb-4.display-6.lh-1.fw-bold.modal-card.d-flex.justify-content-center.align-items-center {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+  #custom-cards > h2,
+  #store > div > h2 {
+    font-size: 10vw;
+    margin-bottom: 0 !important;
+  }
+  #store > div > div > div.card.col-md-4.col-12.ms-md-5.mb-5,
+  #store > div > div > div.card.col-md-4.col-12.me-md-5.mb-5 {
+    width: 99vw;
+  }
+  #hero {
+    padding-bottom: 15% !important;
+  }
+}

@@ -1,0 +1,57 @@
+#hero_top:hover {
+  transform: scale(1);
+}
+.container1 .card:hover {
+  transform: scale(1.01);
+}
+.rating {
+  display: flex;
+  justify-content: flex-start;
+}
+.rating-radio {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.star {
+  cursor: pointer;
+}
+
+.star:before {
+  content: "\2605";
+  font-size: 2em;
+  color: #ddd;
+}
+
+input[type="radio"]:checked ~ .star:before {
+  color: #f90;
+}
+
+.star-display {
+  content: "\2605";
+  font-size: 2em;
+  color: #ddd;
+}
+.star-display-yellow {
+  content: "\2605";
+  font-size: 2em;
+  color: #f90;
+}
+.half-star-container {
+  position: relative;
+  display: inline-block;
+}
+.half-star {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 50%;
+  color: #f90; /* Color for the half-star */
+}

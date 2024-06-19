@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fabcycle</title>
+    <link href="/styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="/styles/styles.css" rel="stylesheet" />
+    <link href="/styles/styles-buy.css" rel="stylesheet" />
+    <link href="/styles/styles-product.css" rel="stylesheet" />
+    <style>
+      @media (max-width: 768px) {
+        #similar_products > div > div > div > div,#hero_top > div > div.col-md-6.order-md-1,#hero_top > div > div.col-md-5.order-md-2,#hero_top > div > div.col-md-6.order-md-1 > div.card,#hero_top > div > div.col-md-6.order-md-1 > div.text-center {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      form button {
+        width: 99vw !important;
+      }
+      #hero_top > div > div.col-md-5.order-md-2 > p{
+        font-size: 5vw;
+        width: 99vw !important;
+      }
+      #review > div > h1{
+        font-size: 2.1rem !important;
+      }
+      #hero_top > div > div.col-md-5.order-md-2 > h2.featurette-heading.fw-normal.lh-1,
+      #features > div > h1,#similar_products > div > h1{
+        font-size: 7vw;
+      }
+      #features > div > div > div {
+        width: 100% !important;
+      }
+      .similar-btn {
+        width: 41vw !important;
+      }
+      #similar_products > div > div > div > div > a > img {
+        width: 60vw !important;
+      }
+      .product-img {
+        display: flex;
+        justify-content: center;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <%- include('navbar.ejs') %>
+    <section id="hero" class="py-5 gradient-background">
+      <div class="container card" id="hero_top">
+        <div class="row featurette my-5">
+          
+          <div class="col-md-6 order-md-1">
+            <div class="card" style="width: 410px;margin-left: 35px;">
+              <img id="openModalBtn" width="400" src="../assets/images/card<%=
+              product["card"] %>.png" style="cursor: pointer;" />
+            </div>
+            <div class="text-center" style="width: 410px;margin-left: 35px;">
+              <p class="lead">click to enlarge</p>
+            </div>
+          </div><div class="col-md-5 order-md-2" style="margin-left: 50px;">
+            <h2 class="featurette-heading fw-normal lh-1">
+              <%= product["0"] %>
+            </h2>
+            <p class="lead"><%= product["desp"] %></p>
+            <hr class="hr mb-4" />
+            <div class="rating mb-3">
+            <%for (let i = 0; i < Math.floor(avg_Rating); i++) { %>
+              <div class="star-display-yellow">★</div>
+            <%} %>
+            <% if (Math.ceil(avg_Rating) - avg_Rating === 0.5) { %>
+              <div class="half-star-container">
+                <div class="star-display-yellow half-star">★</div>
+                <div class="star-display">★</div> 
+            </div>
+              <%}%>
+            <%for (let i = 0; i < 5 - Math.ceil(avg_Rating); i++) { %>
+                  <div class="star-display">★</div>
+                  <%} %></div>
+            <h2><%= product["1"] %></h2>
+            <div class="d-grid gap-2 col-12 mx-auto my-5">
+              <form method="post">
+                <input type="hidden" name="product" value="card<%=
+                product["card"] %>" />
+                <input type="hidden" name="action" value="cart" />
+                <button
+                  type="submit"
+                  class="btn btn-outline-secondary btn-lg px-5"
+                  style="width: 100%"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-plus-square-fill me-2"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"
+                    />
+                  </svg>
+                  Add to cart
+                </button>
+              </form>
+              <div class="mx-5"></div>
+              <form method="post">
+                <input type="hidden" name="product" value="card<%=
+                product["card"] %>" />
+                <input type="hidden" name="action" value="buy" />
+                <button
+                  type="submit"
+                  class="btn btn-lg btn-primary p-2 px-4"
+                  style="width: 100%"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-bag-fill me-2"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"
+                    />
+                  </svg>
+                  Buy now
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><hr class="hr my-5" /></div>
+
+    <section id="features">
+      <div class="container container1">
+        <h1 class="lead display-6">From the manufacturer</h1>
+        <%- product["full_desp"] %>
+      </div>
+    </section>
+
+    <div class="container"><hr class="hr my-5" /></div>
+
+    <section id="similar_products">
+      <% function getRandomInt(min, max, exclude) { let randomNum; do {
+      randomNum = Math.floor(Math.random() * (max - min + 1)) + min; } while
+      (exclude.includes(randomNum)); return randomNum; } const excludedNumbers =
+      []; const numberOfRandomNumbers = 3; for (let i = 0; i <
+      numberOfRandomNumbers; i++) { const randomNum = getRandomInt(0, 8,
+      excludedNumbers); excludedNumbers.push(randomNum);
+      console.log(excludedNumbers); } %> <div class="container">
+        <h1 class="lead display-6 mb-5">Similar Products</h1>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> <% for (let i = 0; i < 3; i++)
+      {%> 
+      <div class="col container">
+              <div class="card shadow-sm m-4">
+                <a class="product-img" style="max-width: 100%;" href="/product?product=<%= products[excludedNumbers[i]]["card"] %>">
+                <img  style="max-width: 100%;" src="../assets/images/card<%= products[excludedNumbers[i]]["card"] %>.png" />
+                </a>
+                <div class="card-body">
+                  <a href="/product?product=<%= products[excludedNumbers[i]]["card"] %>">
+                  <h5><%= products[excludedNumbers[i]]["0"] %></h5></a>
+                  <div class="mb-3"></div>
+                  <a href="/product?product=<%= products[excludedNumbers[i]]["card"] %>">
+                  <h4><%= products[excludedNumbers[i]]["1"] %></h4></a>
+                  
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <form method="post">
+                        <input type="hidden" name="product" value="card<%= products[excludedNumbers[i]]["card"] %>" />
+                        <input type="hidden" name="action" value="cart" />
+                        <button
+                          type="submit"
+                          class="btn btn-outline-secondary p-2 px-4 similar-btn"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-plus-square-fill me-2"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"
+                            />
+                          </svg>
+                          Add to cart
+                        </button>
+                      </form>
+                      <div class="mx-1"></div>
+                      <form method="post">
+                        <input type="hidden" name="product" value="card<%= products[excludedNumbers[i]]["card"] %>" />
+                        <input type="hidden" name="action" value="buy" />
+                        <button
+                          type="submit"
+                          class="btn  btn-primary p-2 px-4 similar-btn"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg "
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-bag-fill me-2"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"
+                            />
+                          </svg>
+                          Buy now
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> <% } %>
+          </div>
+          </div>
+    </section>
+
+    <div class="container"><hr class="hr my-5" /></div>
+
+    <section id="review">
+        <div class="container">
+    <h1 class="lead display-6 mb-5">Reviews</h1>
+    <div class="row g-5">
+    
+    <div class="col-md-4 order-md-1">
+      <div class="position-sticky" style="top: 2rem;">
+        
+        <h1 class="lead" style="font-size: 2rem;">Write a product review</h1>
+        <form
+                class="mb-5"
+                method="post"
+                id="review"
+                name="review"
+                novalidate="novalidate"
+        >
+        <input type="hidden" name="action" value="review" />
+        <input type="hidden" name="card" value="<%= product["card"] %>" />
+        <div class="container"><hr class="hr my-4" /></div>
+        <h1 class="lead" style="font-size: 1.5rem;">Overall Rating</h1>
+        <div class="rating-radio">
+          <input type="radio" id="star5" name="rating" value="5" />
+          <label class="star" for="star5"></label>
+          <input type="radio" id="star4" name="rating" value="4" />
+          <label class="star" for="star4"></label>
+          <input type="radio" id="star3" name="rating" value="3" />
+          <label class="star" for="star3"></label>
+          <input type="radio" id="star2" name="rating" value="2" />
+          <label class="star" for="star2"></label>
+          <input type="radio" id="star1" name="rating" value="1" />
+          <label class="star" for="star1"></label>
+        </div>
+        <div class="container"><hr class="hr my-4" /></div>
+                      <label for="" class="col-form-label"><h1 class="lead" style="font-size: 1.5rem;">Headline</h1></label>
+                      <input
+                        type="text"
+                        class="form-control error mb-4 mt-2"
+                        name="headline"
+                        id="headline"
+                        placeholder="Headline"
+                        aria-required="true"
+                        style="background-color: #f7f7f7"
+                      /><hr class="hr my-4" />
+                    <label for="review" class="col-form-label"
+                      ><h1 class="lead" style="font-size: 1.5rem;">Review</h1></label>
+                    <textarea
+                      class="form-control error mb-4 mt-2"
+                      name="review"
+                      id="review"
+                      cols="30"
+                      rows="4"
+                      placeholder="Write your review"
+                      style="background-color: #f7f7f7"
+                      aria-required="true"
+                      aria-invalid="true"
+                    ></textarea><hr class="hr" />
+        <button class="w-100 btn btn-outline-secondary btn-lg mt-3" type="submit">
+              Post
+        </button>
+        </form>
+      </div>
+    </div><div class="col-md-8 order-md-2">
+      
+        <h1 class="lead" style="font-size: 2rem;">Recent Reviews</h1>
+        <% reviews.forEach(item => { %> 
+          <div class="review-display card container mt-3 pt-2"> 
+            <div class="row"><div class="col-md-1"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" style="background-color: #ddd; border-radius: 50%; padding: 5px; margin: 5px; margin-left: 10px; margin-top: 10px;" class="bi bi-person" viewBox="0 0 16 16">
+  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z"/>
+</svg></div>
+<div class="col-md-6"><div class="d-flex flex-column justify-content-center h-100" style="max-height: inherit;">
+  <h1 class="lead" style="font-size: 1.25rem; margin: 0;"><%= item["username"] %></h1>
+  </div></div></div>
+  <div class="d-flex">
+  <div class="rating" style="margin-left: 10px;">
+    <%for (let i = 0; i < item["rating"]; i++) { %>
+      <div class="star-display-yellow">★</div>
+    <%} %>
+    <%for (let i = 0; i < 5 - item["rating"]; i++) { %>
+          <div class="star-display">★</div>
+          <%} %>
+  </div>
+  <div class="col mx-3">
+  <h1 class="d-flex flex-column justify-content-center h-100 " style="font-size: 1.25rem; margin: 0; margin-top: 3px;"><%= item["headline"] %> </h1></div></div>
+  <h1 class="lead" style="font-size: 1.05rem; margin: 0; margin-left: 10px;">Reviewed in<% const usernameToFind = item["username"]; %>
+
+<% for (const user of users) { %>
+  <% if (user.username === usernameToFind) { %>
+<%=user.state%>
+<%}%>
+<%}%>, India on <%= item["createdAt"].toLocaleDateString() %></h1><h1 class="my-3 mb-4" style="font-size: 1.25rem; margin: 0; margin-left: 10px;"><%= item["review"] %></h1></div>
+  
+
+        <%}) %>
+    </div>
+  </div>
+        </div>    
+    </section>
+    <%- include('footer.ejs') %>
+
+    <div
+      class="modal fade"
+      id="imageModal"
+      tabindex="-1"
+      aria-labelledby="imageModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="imageModalLabel">
+              <%= product["0"] %>
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img
+              id="modalImage"
+              class="img-fluid"
+              src=""
+              alt="Modal Image"
+              width="800"
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script>
+      // Function to open the modal and set the image source
+      function openImageModal(imageSrc) {
+        document.getElementById("modalImage").src = imageSrc;
+        var myModal = new bootstrap.Modal(
+          document.getElementById("imageModal")
+        );
+        myModal.show();
+      }
+
+      // Attach click event to the image
+      document
+        .getElementById("openModalBtn")
+        .addEventListener("click", function () {
+          // Replace 'your_image_source.png' with the actual source of your image
+          openImageModal('../assets/images/card<%= product["card"] %>.png');
+        });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

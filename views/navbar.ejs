@@ -1,0 +1,135 @@
+<section id="navbar">
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html"
+        ><img
+          class="p-0 m-0"
+          src="./assets/images/logo.jpeg"
+          alt="logo"
+          width="50px"
+        />
+        Fabcycle</a
+      >
+      <div class="d-flex justify-content-end">
+        <nav
+          class="pt-3 pb-0 d-flex justify-content-end nav-links"
+          width="100%"
+        >
+          <ul class="d-flex justify-content-end">
+            <li><a href="./index.html">Home</a></li>
+            <li>
+              <div class="dropdown-center">
+                <a
+                  class="btn dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Account
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/login">Login</a></li>
+                  <li>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/register">Register</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="/buy.html">Buy</a></li>
+            <li><a href="/sell.html">Sell</a></li>
+            <li><a href="./cart">Cart</a></li>
+            <li><a href="/contact-us.html">Contact Us</a></li>
+          </ul>
+        </nav>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Fabcycle</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Account
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/login">Login</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/logout">Logout</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/register">Register</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Store
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="./buy.html">Buy</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./sell.html">Sell</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cart">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact-us.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</section>

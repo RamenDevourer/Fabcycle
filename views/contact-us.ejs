@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="/styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="/styles/styles.css" rel="stylesheet" />
+    <link href="/styles/styles-contact-us.css" rel="stylesheet" />
+  </head>
+  <body>
+    <%- include('navbar.ejs') %>
+
+    <section id="hero" class="gradient-background mb-5">
+      <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img
+              src="../assets/images/contact.png"
+              class="d-block mx-lg-auto img-fluid contact-img"
+              alt="log sell"
+              loading="lazy"
+            />
+          </div>
+          <div class="col-lg-6">
+            <% if (user) { %>
+            <h1>Welcome, <%= username %>!</h1>
+            <% } else {}%>
+            <h1
+              class="display-6 fw-bold text-body-emphasis lh-1 mb-3 fab-title"
+            >
+              Contact Us
+            </h1>
+            <p class="lead fab-para">
+              Do you have any questions?<br />Please do not hesitate to contact
+              us directly.
+            </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <a href="./buy.html"
+                ><button type="button" class="btn btn-dark btn-lg px-4 me-md-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-bag-heart"
+                    viewBox="0 1 17 15"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"
+                    />
+                  </svg>
+                  Buy
+                </button></a
+              >
+              <a href="./sell.html"
+                ><button
+                  type="button"
+                  class="btn btn-outline-secondary btn-lg px-4"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-bag-heart-fill"
+                    viewBox="0 1 17 15"
+                  >
+                    <path
+                      d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5ZM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1Zm0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"
+                    />
+                  </svg>
+                  Sell
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="form" class="my-5 py-5">
+      <div class="container">
+        <div class="row align-items-stretch no-gutters contact-wrap">
+          <div class="col-md-12">
+            <div class="form h-100">
+              <h2>Get Started</h2>
+              <hr class="hr mb-5" />
+              <form
+                class="mb-5"
+                method="post"
+                id="contactForm"
+                name="contactForm"
+                novalidate="novalidate"
+              >
+                <div class="row">
+                  <div class="col-md-6 form-group mb-3">
+                    <label for="" class="col-form-label">Name *</label>
+                    <input
+                      type="text"
+                      class="form-control error"
+                      name="name"
+                      id="name"
+                      placeholder="Your name"
+                      aria-required="true"
+                    /><label id="name-error" class="error" for="name"
+                      >Please enter your name</label
+                    >
+                  </div>
+                  <div class="col-md-6 form-group mb-3">
+                    <label for="" class="col-form-label">Email *</label>
+                    <input
+                      type="text"
+                      class="form-control error"
+                      name="email"
+                      id="email"
+                      placeholder="Your email"
+                      aria-required="true"
+                    /><label id="email-error" class="error" for="email"
+                      >Please enter a valid email address</label
+                    >
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group mb-3">
+                    <div class="col-md-12 form-group mb-3">
+                      <label for="" class="col-form-label">Subject *</label>
+                      <input
+                        type="text"
+                        class="form-control error"
+                        name="subject"
+                        id="subject"
+                        placeholder="Subject"
+                        aria-required="true"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group mb-3">
+                    <label for="message" class="col-form-label"
+                      >Message *</label
+                    >
+                    <textarea
+                      class="form-control error"
+                      name="message"
+                      id="message"
+                      cols="30"
+                      rows="4"
+                      placeholder="Write your message"
+                      aria-required="true"
+                      aria-invalid="true"
+                    ></textarea
+                    ><label id="message-error" class="error" for="message"
+                      >Please enter a message</label
+                    >
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input
+                      type="submit"
+                      value="Send Message"
+                      class="w-100 btn btn-primary btn-lg"
+                    />
+                    <span class="submitting"></span>
+                  </div>
+                </div>
+              </form>
+              <div id="form-message-warning mt-4 mb-5"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="footer" class="gradient-background mt-5">
+      <div class="container">
+        <footer
+          class="d-flex flex-wrap justify-content-between align-items-center py-5 mt-4 border-top"
+        >
+          <div class="col-md-4 d-flex align-items-center">
+            <span class="mb-3 mb-md-0 text-body-secondary">©2023 Fabcycle</span>
+          </div>
+          <a
+            href="../index.html"
+            class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
+          >
+            <img
+              class="p-0 m-0"
+              src="../assets/images/logo.jpeg"
+              alt="logo"
+              width="70px"
+            />
+          </a>
+        </footer>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="/styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="/styles/styles.css" rel="stylesheet" />
+    <link href="/styles/styles-buy.css" rel="stylesheet" />
+    <style>
+      .product {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        text-align: left;
+        flex: 1 1 100%;
+        background-color: white;
+        height: 280px;
+      }
+      .product:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12),
+          0 4px 8px rgba(0, 0, 0, 0.06);
+      }
+      #totalPrice {
+        height: fit-content;
+      }
+
+      .product img {
+        float: left;
+        max-width: 100%;
+        width: 210px;
+        height: 210px;
+        margin-right: 20px;
+      }
+      @media (max-width: 768px) {
+        .product {
+          height: auto;
+        }
+        .cart-img {
+          display: flex;
+          justify-content: center;
+        }
+        #items > div > div > form > button {
+          margin-bottom: 5px;
+        }
+        #items > div > div > div.cart-img > img {
+          margin-right: 0 !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('navbar.ejs') %>
+
+    <section id="hero" class="gradient-background mb-5">
+      <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img
+              src="./assets/images/hero.png"
+              class="d-block mx-lg-auto img-fluid"
+              alt="logo1"
+              width="700"
+              height="500"
+              loading="lazy"
+            />
+          </div>
+          <div class="col-lg-6">
+            <% if (user) { %>
+            <h1>Welcome, <%= username %>!</h1>
+            <% } else {}%>
+            <h1
+              class="display-6 fw-bold text-body-emphasis lh-1 mb-3 fab-title"
+            >
+              Cart
+            </h1>
+            <p class="lead fab-para">
+              Buy fashionable and modern <br />upcyled clothes
+            </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <a href="./buy.html">
+                <button type="button" class="btn btn-dark btn-lg px-4 me-md-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-bag-heart"
+                    viewBox="0 1 17 15"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"
+                    />
+                  </svg>
+                  Buy
+                </button></a
+              >
+              <a href="./sell.html"
+                ><button
+                  type="button"
+                  class="btn btn-outline-secondary btn-lg px-4"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-bag-heart-fill"
+                    viewBox="0 1 17 15"
+                  >
+                    <path
+                      d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5ZM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1Zm0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"
+                    />
+                  </svg>
+                  Sell
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="items" class="bg-body-tertiary py-5 album">
+      <div class="container">
+        <% var total = 0; %> <% console.log(cart); %> <% cart.forEach(item => {
+        %> <% PriceString = item[1].slice(1,2) + item[1].slice(3) %> <% var
+        priceNumber = parseFloat(PriceString); %> <% var itemQuantity =
+        parseInt(item.quantity); %> <% total += itemQuantity * priceNumber; %>
+        <div class="product">
+          <div class="cart-img">
+            <img
+              src="./assets/images/card<%= item.card %>.png"
+              alt="Product 1"
+            />
+          </div>
+          <div class="my-2"></div>
+          <h2 class="card-body h1"><%= item[0] %></h2>
+          <div class="my-3 mb-4"></div>
+          <span><h4 class="h3">Price: <%= item[1] %></h4></span>
+          <span class="quantity card-text h4"
+            >Quantity:<%= item.quantity %>
+          </span>
+          <div class="my-2"></div>
+          <form method="post">
+            <input type="hidden" name="product" value="card<%=item.card%>" />
+            <input type="hidden" name="action" value="decrease" />
+            <button
+              type="submit"
+              class="btn btn-sm btn-outline-secondary p-2 px-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-dash-square"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                />
+                <path
+                  d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                />
+              </svg>
+              Decrease
+            </button>
+          </form>
+          <form method="post" style="margin-top: 1px">
+            <input type="hidden" name="product" value="card<%=item.card%>" />
+            <input type="hidden" name="action" value="increase" />
+            <button
+              type="submit"
+              class="btn btn-sm btn-outline-dark btn-secondary p-2 px-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-plus-square"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                />
+                <path
+                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                />
+              </svg>
+              Increase
+            </button>
+          </form>
+        </div>
+        <% }); %>
+        <div class="product" id="totalPrice" height="5px" padding="0px">
+          <h1 class="h1">Total Price:</h1>
+          <h2 class="h2">₹<%= total.toFixed(2) %></h2>
+        </div>
+        <h1 class="h1">Procceed To Checkout:</h1>
+        <a href="/checkout">
+          <button type="button " class="btn btn-lg btn-primary p-2 px-4">
+            Checkout
+          </button></a
+        >
+      </div>
+    </section>
+
+    <section id="footer" class="gradient-background">
+      <div class="container">
+        <footer
+          class="d-flex flex-wrap justify-content-between align-items-center py-5 mt-4 border-top"
+        >
+          <div class="col-md-4 d-flex align-items-center">
+            <span class="mb-3 mb-md-0 text-body-secondary">©2023 Fabcycle</span>
+          </div>
+          <a
+            href="../index.html"
+            class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
+          >
+            <img
+              class="p-0 m-0"
+              src="../assets/images/logo.jpeg"
+              alt="logo"
+              width="70px"
+            />
+          </a>
+        </footer>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const reloadPg = () => {
+        if (window.localStorage) {
+          if (!localStorage.getItem("reload")) {
+            localStorage["reload"] = true;
+            window.location.reload();
+          } else {
+            localStorage.removeItem("reload");
+          }
+        }
+      };
+      reloadPg();
+    </script>
+  </body>
+</html>

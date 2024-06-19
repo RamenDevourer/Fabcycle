@@ -1,0 +1,9 @@
+div {
+  font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  #form {
+    padding: 0 !important;
+  }
+}
