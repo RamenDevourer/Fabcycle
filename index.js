@@ -1,4 +1,5 @@
 const express = require("express");
+require('dotenv').config()
 const mongoose = require("mongoose");
 const cheerio = require("cheerio");
 const UserSell = require("./sell_data");
@@ -14,9 +15,7 @@ var ejs = require('ejs');
 const port = 3000;
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
-mongoose.connect(
-  "mongodb+srv://***REMOVED***"
-);
+mongoose.connect(process.env.MONGODB_URL);
 
 app.use(
   session({
@@ -337,7 +336,7 @@ app.post("/cart", async (req, res) => {
               console.log(`${updateField} field incremented successfully.`);
             }
           }
-        );ramenmail
+        );
         return res.redirect("/cart");
       }
     }
