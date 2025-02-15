@@ -8,6 +8,7 @@ const UserLogin = require("./user_login");
 const Products = require("./products");
 const Reviews = require("./review");
 const session = require("express-session");
+const MongoDBStore = require("connect-mongodb-session")(session);
 const nodemailer = require("nodemailer");
 
 const app = express();
@@ -15,15 +16,34 @@ var ejs = require('ejs');
 const port = 3000;
 app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
-mongoose.connect(process.env.MONGODB_URL);
+mongoose.connect(process.env.MONGODB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 
+// Configure MongoDB session store
+const store = new MongoDBStore({
+  uri: process.env.MONGODB_URL, // Use your MongoDB connection string
+  collection: "sessions", // Name of collection to store sessions
+});
+
+store.on("error", (error) => {
+  console.error("Session Store Error:", error);
+});
+
 app.use(
   session({
-    secret: "session-key",
+    secret: "session-key", 
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
+    store: store, // Use MongoDB session store
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24, // 1 day session expiry
+      secure: false, // Set to true if using HTTPS
+      httpOnly: true,
+    },
   })
 );
 
