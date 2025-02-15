@@ -4,7 +4,7 @@
     "routes": [{ "src": "/(.*)", "dest": "/index.js" }],
     "functions": {
         "index.js": {
-            "includeFiles": ["views/**/*.ejs"]
+            "includeFiles": "views/**"
         }
     }
 }
