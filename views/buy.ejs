@@ -60,6 +60,7 @@
                     src="../assets/images/dress.png"
                     class="d-block w-100"
                     alt="dress"
+                    loading="lazy"
                   />
                   <div class="carousel-caption d-block">
                     <h5>Dress</h5>
@@ -71,6 +72,7 @@
                     src="../assets/images/pant.png"
                     class="d-block w-100"
                     alt="pants"
+                    loading="lazy"
                   />
                   <div class="carousel-caption d-block text-dark">
                     <h5>Pants</h5>
@@ -169,7 +171,7 @@
             <div class="col">
               <div class="card shadow-sm">
                 <a class="product-img d-flex justify-content-center" style="max-width: 100%;" href="/product?product=<%= item["card"] %>">
-                <img  style="max-width: 100%;" src="../assets/images/card<%= item["card"] %>.png" /></a>
+                <img loading="lazy" style="max-width: 100%;" src="../assets/images/card<%= item["card"] %>.png" /></a>
                 <div class="card-body">
                   <a href="/product?product=<%= item["card"] %>">
                   <h5><%= item[0] %></h5></a>
@@ -259,6 +261,7 @@
               src="../assets/images/logo.jpeg"
               alt="logo"
               width="70px"
+              loading="lazy"
             />
           </a>
         </footer>

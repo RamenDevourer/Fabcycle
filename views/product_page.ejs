@@ -53,7 +53,7 @@
           
           <div class="col-md-6 order-md-1">
             <div class="card" style="width: 410px;margin-left: 35px;">
-              <img id="openModalBtn" width="400" src="../assets/images/card<%=
+              <img loading="lazy" id="openModalBtn" width="400" src="../assets/images/card<%=
               product["card"] %>.png" style="cursor: pointer;" />
             </div>
             <div class="text-center" style="width: 410px;margin-left: 35px;">
@@ -160,7 +160,7 @@
       <div class="col container">
               <div class="card shadow-sm m-4">
                 <a class="product-img" style="max-width: 100%;" href="/product?product=<%= products[excludedNumbers[i]]["card"] %>">
-                <img  style="max-width: 100%;" src="../assets/images/card<%= products[excludedNumbers[i]]["card"] %>.png" />
+                <img loading="lazy" style="max-width: 100%;" src="../assets/images/card<%= products[excludedNumbers[i]]["card"] %>.png" />
                 </a>
                 <div class="card-body">
                   <a href="/product?product=<%= products[excludedNumbers[i]]["card"] %>">
@@ -357,6 +357,7 @@
               src=""
               alt="Modal Image"
               width="800"
+              loading="lazy"
             />
           </div>
           <div class="modal-footer">
