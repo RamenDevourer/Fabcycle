@@ -13,7 +13,7 @@ const nodemailer = require("nodemailer");
 const app = express();
 var ejs = require('ejs');
 const port = 3000;
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
 mongoose.connect(process.env.MONGODB_URL);
 app.set("views", __dirname + "/views");
