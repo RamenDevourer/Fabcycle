@@ -16,6 +16,8 @@ const port = 3000;
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 mongoose.connect(process.env.MONGODB_URL);
+app.set("views", __dirname + "/views");
+app.set("view engine", "ejs");
 
 app.use(
   session({
