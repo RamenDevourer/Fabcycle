@@ -1,6 +1,6 @@
 # FabCycle - Fabric Recycling Platform
 
-FabCycle is an **e-commerce platform** designed for selling and buying upcycled fabrics. It promotes sustainable fashion by providing a marketplace where users can trade eco-friendly textile products. The platform ensures a seamless user experience with secure authentication, intuitive shopping features, and interactive community engagement.
+FabCycle is an **e-commerce platform** designed for selling and buying upcycled fabrics. It promotes sustainable fashion by providing a marketplace where users can purchase eco-friendly textile products. The platform ensures a seamless user experience with secure authentication, intuitive shopping features, and interactive community engagement.
 
 ## 🌿 Features
 
